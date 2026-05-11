@@ -2,6 +2,10 @@
 
 This file documents completed features and improvements. For planned work, see `backlog.md`.
 
+## Sort duplicate groups by saveable space (2026-04-05)
+
+- **CSV + text group ordering** — Duplicate groups in both `duplicate_pdfs_report.csv` and `duplicate_pdfs_report.txt` are now ordered by descending saveable space, calculated as `file_size × extra copies`, so the biggest cleanup opportunities appear first.
+
 ## Extract paths to config.json (2026-04-05)
 
 - **config.json** — Moved `scan_dir` and `output_dir` out of `find_duplicate_pdfs.py` into a `config.json` file next to the script. The script loads these at startup via `json` (stdlib). No pip dependencies added.

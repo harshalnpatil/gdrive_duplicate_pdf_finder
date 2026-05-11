@@ -57,8 +57,8 @@ Done in 8.3s.
 ```
 
 **Output files:**
-- `duplicate_pdfs_report.csv` — machine-readable, every file with status
-- `duplicate_pdfs_report.txt` — human-readable grouped report with wasted space
+- `duplicate_pdfs_report.csv` — machine-readable, every file with status; duplicate groups sorted by descending saveable space
+- `duplicate_pdfs_report.txt` — human-readable grouped report with wasted space; duplicate groups sorted by descending saveable space
 
 ### 2. `find_duplicate_pdfs_apps_script.js` — Google Apps Script
 

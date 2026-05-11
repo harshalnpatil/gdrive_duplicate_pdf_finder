@@ -222,6 +222,20 @@ def _oldest_in_group(
     return oldest_name, oldest_path, oldest_date
 
 
+def _sorted_duplicate_groups(
+    duplicates: Dict[Tuple[int, str], List[Tuple[str, float]]],
+) -> List[Tuple[Tuple[int, str], List[Tuple[str, float]]]]:
+    """Sort duplicate groups by descending saveable space, then file size."""
+    return sorted(
+        duplicates.items(),
+        key=lambda item: (
+            -(item[0][0] * (len(item[1]) - 1)),
+            -item[0][0],
+            item[0][1],
+        ),
+    )
+
+
 def write_csv_report(
     duplicates: Dict[Tuple[int, str], List[Tuple[str, float]]],
     cloud_only_files: List[Tuple[str, int]],
@@ -239,7 +253,7 @@ def write_csv_report(
 
         gid = 0
         # Duplicate groups
-        for (size, digest), items in sorted(duplicates.items()):
+        for (size, digest), items in _sorted_duplicate_groups(duplicates):
             gid += 1
             o_name, o_path, o_date = _oldest_in_group(items)
             for p in sorted(items, key=lambda x: x[0]):
@@ -311,7 +325,7 @@ def write_text_report(
             f.write("  (none)\n")
         else:
             for idx, ((size, digest), items) in enumerate(
-                sorted(duplicates.items()), start=1
+                _sorted_duplicate_groups(duplicates), start=1
             ):
                 saveable = size * (len(items) - 1)
                 o_name, o_path, o_date = _oldest_in_group(items)
