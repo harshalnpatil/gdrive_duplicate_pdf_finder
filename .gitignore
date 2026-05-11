@@ -1,3 +1,9 @@
 # Generated reports
 duplicate_pdfs_report.csv
 duplicate_pdfs_report.txt
+
+# Editor and IDE
+.codex
+
+# Python
+__pycache__/
