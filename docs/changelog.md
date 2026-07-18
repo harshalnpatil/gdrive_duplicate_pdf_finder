@@ -2,6 +2,10 @@
 
 This file documents completed features and improvements. For planned work, see `backlog.md`.
 
+## Default branch migrated to main (2026-07-18)
+
+- **Branch migration** — Created `main` from the existing `master` commit (`6e9c3ab`), set `main` as the repository default, verified the README and tracked files matched before documentation was added, then removed `master`.
+
 ## Sort duplicate groups by saveable space (2026-04-05)
 
 - **CSV + text group ordering** — Duplicate groups in both `duplicate_pdfs_report.csv` and `duplicate_pdfs_report.txt` are now ordered by descending saveable space, calculated as `file_size × extra copies`, so the biggest cleanup opportunities appear first.
