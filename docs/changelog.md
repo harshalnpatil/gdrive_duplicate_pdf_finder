@@ -2,6 +2,11 @@
 
 This file documents completed features and improvements. For planned work, see `backlog.md`.
 
+## 2026-10-17 - Agent setup and verification
+
+- Documented a stdlib syntax check that does not scan Google Drive or rewrite reports.
+- Verification: the documented AST parse passed.
+
 ## Sort duplicate groups by saveable space (2026-04-05)
 
 - **CSV + text group ordering** — Duplicate groups in both `duplicate_pdfs_report.csv` and `duplicate_pdfs_report.txt` are now ordered by descending saveable space, calculated as `file_size × extra copies`, so the biggest cleanup opportunities appear first.

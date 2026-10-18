@@ -14,6 +14,16 @@ With ~8,000+ PDFs this duplication is impossible to resolve manually. A naive lo
 
 The solution is a two-pronged approach — a **local Python script** that uses Win32 API calls to detect and skip cloud-only files while hashing the rest, and a **Google Apps Script** that runs server-side against the Drive API to deduplicate the cloud-only files without downloading anything.
 
+## Local syntax verification
+
+Use Python 3.12+ with no pip dependencies. From this repository root, check the Python source without scanning Drive or writing reports:
+
+```powershell
+python -c "import ast, pathlib; ast.parse(pathlib.Path('find_duplicate_pdfs.py').read_text(encoding='utf-8-sig')); print('Python syntax OK')"
+```
+
+This checks syntax only. It does not verify Win32 placeholder handling or Google Apps Script behavior.
+
 ## Scripts
 
 ### 1. `find_duplicate_pdfs.py` — Local Python script
