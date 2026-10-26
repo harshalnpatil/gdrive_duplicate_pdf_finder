@@ -32,4 +32,4 @@ For any non-trivial task in this project, maintain a task diary under `docs/diar
 
 ## Before running shell commands
 
-Use syntax for the environment you are actually running in. On Windows PowerShell, use **PowerShell** syntax. Codex usually runs in WSL/bash even when project files are on Windows, so Codex should use bash/Linux commands unless it has confirmed the current shell is PowerShell. Read the parent workspace's `PS_AGENTS.md` for command mapping and gotchas.
+Use syntax for the environment you are actually running in. On Windows PowerShell, use **PowerShell** syntax. Read the parent workspace's `PS_AGENTS.md` for command mapping and gotchas.
